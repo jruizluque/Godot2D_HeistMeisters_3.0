@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scripts/Character.gd" type="Script" id=1]
 [ext_resource path="res://GFX/PNG/Man Red/manRed_stand.png" type="Texture" id=2]
@@ -9,7 +9,13 @@ custom_solver_bias = 0.0
 radius = 10.1164
 height = 24.3396
 
-[node name="Character" type="KinematicBody2D" index="0"]
+[sub_resource type="OccluderPolygon2D" id=2]
+
+closed = true
+cull_mode = 1
+polygon = PoolVector2Array( -6.55049, -21.01, 1.91621, -21.4739, 4.11988, -20.0822, 5.85961, -18.1105, 6.90345, -15.0949, 7.48336, -11.1515, 8.17925, -7.32411, 10.151, -3.72866, 11.3108, -1.17705, 12.0067, 1.1426, 10.9628, 3.11429, 10.151, 6.3618, 9.22309, 7.86957, 7.59934, 11.1171, 7.48336, 13.4367, 6.90345, 16.4522, 4.46782, 19.6998, 2.14818, 20.8596, -1.9112, 21.0915, -5.97058, 20.9756, -9.68201, 18.7719, -10.6099, 16.4522, -11.1898, 13.4367, -11.4217, 11.1171, -11.6537, 8.56546, -12.9295, 6.01385, -13.9734, 2.99831, -14.4373, -0.133209, -13.8574, -3.03277, -12.3496, -5.93232, -11.8857, -9.52777, -11.5377, -12.4273, -11.0738, -15.7908, -10.2619, -17.9945, -8.4062, -19.7342 )
+
+[node name="Character" type="KinematicBody2D"]
 
 input_pickable = false
 collision_layer = 1
@@ -29,5 +35,10 @@ texture = ExtResource( 2 )
 visible = false
 position = Vector2( -1.93712, 0 )
 shape = SubResource( 1 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="." index="2"]
+
+occluder = SubResource( 2 )
+light_mask = 1
 
 
