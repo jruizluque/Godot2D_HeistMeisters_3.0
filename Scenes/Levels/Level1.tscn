@@ -2,10 +2,10 @@
 
 [ext_resource path="res://Tilesets/FloorTiles.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/Characters/Player.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Tilesets/AutoTileWalls.tres" type="TileSet" id=3]
-[ext_resource path="res://Scenes/Characters/Character.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Characters/SecurityCamera.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Tilesets/AutoTileWalls.tres" type="TileSet" id=4]
 
-[node name="Level1" type="Node"]
+[node name="Level1" type="Node" index="0"]
 
 [node name="Floors" type="TileMap" parent="." index="0"]
 
@@ -31,10 +31,28 @@ tile_data = PoolIntArray( 65537, 16, 0, 65538, 16, 0, 65539, 16, 0, 65540, 16, 0
 
 position = Vector2( 502.128, 274.921 )
 
-[node name="Walls" type="TileMap" parent="." index="2"]
+[node name="SecurityCameras" type="Node2D" parent="." index="2"]
+
+[node name="SecurityCamera1" parent="SecurityCameras" index="0" instance=ExtResource( 3 )]
+
+position = Vector2( 75.2539, 323.753 )
+
+[node name="SecurityCamera2" parent="SecurityCameras" index="1" instance=ExtResource( 3 )]
+
+position = Vector2( 1536.57, 501.452 )
+rotation = -1.5708
+_sections_unfolded = [ "Transform" ]
+
+[node name="SecurityCamera3" parent="SecurityCameras" index="2" instance=ExtResource( 3 )]
+
+position = Vector2( 1187.96, 137.732 )
+rotation = 1.5708
+_sections_unfolded = [ "Transform" ]
+
+[node name="Walls" type="TileMap" parent="." index="3"]
 
 mode = 0
-tile_set = ExtResource( 3 )
+tile_set = ExtResource( 4 )
 cell_size = Vector2( 64, 64 )
 cell_quadrant_size = 16
 cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
@@ -45,18 +63,15 @@ cell_clip_uv = false
 collision_use_kinematic = false
 collision_friction = 1.0
 collision_bounce = 0.0
-collision_layer = 1
+collision_layer = 2
 collision_mask = 1
 occluder_light_mask = 1
 format = 1
 tile_data = PoolIntArray( 0, 0, 262144, 1, 0, 262146, 2, 0, 262146, 3, 0, 262146, 4, 0, 262146, 5, 0, 262146, 6, 0, 262146, 7, 0, 262146, 8, 0, 262146, 9, 0, 262146, 10, 0, 262146, 11, 0, 262146, 12, 0, 262146, 13, 0, 262146, 14, 0, 262146, 15, 0, 262145, 65536, 0, 327682, 65551, 0, 327683, 65552, 0, 262146, 65553, 0, 262146, 65554, 0, 262146, 65555, 0, 262146, 65556, 0, 262146, 65557, 0, 262146, 65558, 0, 262146, 65559, 0, 262146, 65560, 0, 262146, 65561, 0, 262146, 65562, 0, 262146, 65563, 0, 262145, 131072, 0, 327682, 131087, 0, 327682, 131099, 0, 327682, 196608, 0, 327682, 196611, 0, 458758, 196614, 0, 458758, 196617, 0, 458758, 196620, 0, 458758, 196623, 0, 262150, 196628, 0, 458758, 196632, 0, 458758, 196635, 0, 327683, 196636, 0, 262146, 196637, 0, 262146, 196638, 0, 262146, 196639, 0, 262145, 262144, 0, 327682, 262171, 0, 262150, 262175, 0, 327682, 327680, 0, 327682, 327698, 0, 458758, 327702, 0, 458758, 327711, 0, 327682, 393216, 0, 327682, 393219, 0, 458758, 393222, 0, 458758, 393225, 0, 458758, 393228, 0, 458758, 393231, 0, 327685, 393247, 0, 327682, 458752, 0, 327682, 458767, 0, 327682, 458779, 0, 327685, 458783, 0, 327682, 524288, 0, 327682, 524303, 0, 327683, 524304, 0, 262146, 524305, 0, 262146, 524306, 0, 262146, 524307, 0, 262146, 524308, 0, 262145, 524310, 0, 262144, 524311, 0, 262146, 524312, 0, 262146, 524313, 0, 262146, 524314, 0, 262146, 524315, 0, 327684, 524319, 0, 327682, 589824, 0, 327680, 589825, 0, 262146, 589826, 0, 262146, 589827, 0, 262146, 589828, 0, 262146, 589829, 0, 262146, 589830, 0, 262146, 589831, 0, 262146, 589832, 0, 262146, 589833, 0, 262145, 589836, 0, 262144, 589837, 0, 262146, 589838, 0, 262146, 589839, 0, 327684, 589844, 0, 327682, 589846, 0, 327682, 589851, 0, 327682, 589855, 0, 327682, 655369, 0, 327682, 655372, 0, 262150, 655375, 0, 327680, 655376, 0, 262147, 655377, 0, 262146, 655378, 0, 262146, 655379, 0, 262146, 655380, 0, 327681, 655382, 0, 327680, 655383, 0, 262146, 655384, 0, 262145, 655387, 0, 327682, 655391, 0, 327682, 720905, 0, 327682, 720912, 0, 327682, 720920, 0, 327682, 720923, 0, 327682, 720927, 0, 327682, 786441, 0, 327682, 786448, 0, 262150, 786456, 0, 327682, 786459, 0, 327682, 786463, 0, 327682, 851977, 0, 327680, 851978, 0, 262146, 851979, 0, 262146, 851980, 0, 262145, 851992, 0, 327682, 851995, 0, 327682, 851999, 0, 327682, 917516, 0, 327682, 917528, 0, 327682, 917531, 0, 327680, 917532, 0, 262146, 917533, 0, 262146, 917534, 0, 262146, 917535, 0, 327681, 983052, 0, 327680, 983053, 0, 262146, 983054, 0, 262146, 983055, 0, 262146, 983056, 0, 262146, 983057, 0, 262145, 983064, 0, 327682, 1048593, 0, 327682, 1048600, 0, 327682, 1114129, 0, 327682, 1114136, 0, 327682, 1179665, 0, 327680, 1179666, 0, 262146, 1179667, 0, 262146, 1179668, 0, 262146, 1179669, 0, 262146, 1179670, 0, 262146, 1179671, 0, 262146, 1179672, 0, 327681 )
+_sections_unfolded = [ "Collision" ]
 
-[node name="CanvasModulate" type="CanvasModulate" parent="." index="3"]
+[node name="CanvasModulate" type="CanvasModulate" parent="." index="4"]
 
 color = Color( 0.00448608, 0.0990677, 0.382813, 1 )
-
-[node name="Character" parent="." index="4" instance=ExtResource( 4 )]
-
-position = Vector2( 1090, 320 )
 
 
