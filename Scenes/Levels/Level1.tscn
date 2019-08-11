@@ -5,7 +5,7 @@
 [ext_resource path="res://Scenes/Characters/SecurityCamera.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Tilesets/AutoTileWalls.tres" type="TileSet" id=4]
 
-[node name="Level1" type="Node" index="0"]
+[node name="Level1" type="Node"]
 
 [node name="Floors" type="TileMap" parent="." index="0"]
 
@@ -32,6 +32,8 @@ tile_data = PoolIntArray( 65537, 16, 0, 65538, 16, 0, 65539, 16, 0, 65540, 16, 0
 position = Vector2( 502.128, 274.921 )
 
 [node name="SecurityCameras" type="Node2D" parent="." index="2"]
+
+_sections_unfolded = [ "Transform" ]
 
 [node name="SecurityCamera1" parent="SecurityCameras" index="0" instance=ExtResource( 3 )]
 
