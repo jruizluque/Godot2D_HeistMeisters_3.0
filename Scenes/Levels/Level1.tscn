@@ -30,6 +30,7 @@ tile_data = PoolIntArray( 65537, 16, 0, 65538, 16, 0, 65539, 16, 0, 65540, 16, 0
 [node name="Player" parent="." index="1" instance=ExtResource( 2 )]
 
 position = Vector2( 502.128, 274.921 )
+collision_mask = 1
 
 [node name="SecurityCameras" type="Node2D" parent="." index="2"]
 
